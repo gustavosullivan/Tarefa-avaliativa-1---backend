@@ -3,14 +3,15 @@ import java.util.Scanner;
 public class CalculoIMC {
     public static void main(String[] args) {
         Scanner lerTeclado = new Scanner(System.in);
+
         Boolean inputHeight = false;
         Boolean inputdWeigh = false;
+
         Double height = null;
         Double weight = null;
 
         System.out.print("Digite seu nome: ");
         String name = lerTeclado.nextLine();
-
 
         System.out.print("Digite seu Gênero (Masculino), (Feminino) ou (Neutro): ");
         char gender = lerTeclado.nextLine().charAt(0);
