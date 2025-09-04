@@ -30,10 +30,8 @@ public class CalculoIMC {
                     System.out.println("Valor inválido! Digite apenas 'M', 'F' ou 'N'.");
                 }
 
-            inputGender = true;
-
             }catch(Exception e){
-                System.out.print("Digite um Genêro válido 'M', 'F', 'N': ");
+                System.out.printf("Digite um Genêro válido 'M', 'F', 'N': \n");
             }
         }while (!inputGender);
 
@@ -47,7 +45,7 @@ public class CalculoIMC {
                 inputHeight = true;
 
             }catch(Exception e){
-                System.out.print("Digite uma altura válida");
+                System.out.printf("Digite uma altura válida \n");
             }
         }while (!inputHeight);
 
@@ -61,7 +59,7 @@ public class CalculoIMC {
                 inputdWeigh = true;
 
             }catch(Exception e) {
-                System.out.print("Digite um peso válido.");
+                System.out.printf("Digite um peso válido.\n");
             }
         }while (!inputdWeigh);
 
