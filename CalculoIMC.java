@@ -17,7 +17,7 @@ public class CalculoIMC {
         System.out.print("Digite seu nome: ");
         String name = lerTeclado.nextLine();
 
-        
+    
         do {
             try{
                 System.out.print("Digite seu Gênero (Masculino), (Feminino) ou (Neutro): ");
