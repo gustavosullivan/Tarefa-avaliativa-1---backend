@@ -6,16 +6,37 @@ public class CalculoIMC {
 
         Boolean inputHeight = false;
         Boolean inputdWeigh = false;
+        Boolean inputGender = false;        
 
         Double height = null;
         Double weight = null;
 
+        char gender = ' ';
+        char genderUpper = ' ';
+
         System.out.print("Digite seu nome: ");
         String name = lerTeclado.nextLine();
 
-        System.out.print("Digite seu Gênero (Masculino), (Feminino) ou (Neutro): ");
-        char gender = lerTeclado.nextLine().charAt(0);
-        char genderUpper = Character.toUpperCase(gender);
+        
+        do {
+            try{
+                System.out.print("Digite seu Gênero (Masculino), (Feminino) ou (Neutro): ");
+                gender = lerTeclado.nextLine().charAt(0);
+                genderUpper = Character.toUpperCase(gender);
+            
+                if (genderUpper == 'M' || genderUpper == 'F' || genderUpper == 'N') {
+                    inputGender = true;
+                } else {
+                    System.out.println("Valor inválido! Digite apenas 'M', 'F' ou 'N'.");
+                }
+
+            inputGender = true;
+
+            }catch(Exception e){
+                System.out.print("Digite um Genêro válido 'M', 'F', 'N': ");
+            }
+        }while (!inputGender);
+
 
         do {
             try{
@@ -53,7 +74,6 @@ public class CalculoIMC {
 
         switch (genderUpper) {
             case 'M':
-
                 if (CalculoIMC >= 40) {
                     System.out.print("Obeso");
                 } else if (CalculoIMC >= 30 && CalculoIMC <= 39.9) {
@@ -67,7 +87,7 @@ public class CalculoIMC {
                 }
                 break;
 
-            case 'F':
+            case 'F' :
 
                 if (CalculoIMC >= 39) {
                     System.out.print("Obeso");
@@ -82,9 +102,8 @@ public class CalculoIMC {
                 }
                 break;
 
-            default:
-                System.out.print("Genero N: ");
-                if (CalculoIMC >= 39) {
+            case 'N':
+              if (CalculoIMC >= 39) {
                     System.out.print("Obeso");
                 } else if (CalculoIMC >= 29 && CalculoIMC <= 38.9) {
                     System.out.print("Obesidade Moderada");
@@ -95,6 +114,10 @@ public class CalculoIMC {
                 } else {
                     System.out.print("Abaixo do Normal");
                 }
+                break;
+
+            default:
+                System.out.print("Genêro inválido");
                 break;
         }
     }
